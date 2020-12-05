@@ -1,0 +1,2 @@
+tail -n 1 summary.csv: output 1 line cuối của file summary.csv
+2 dòng sed lấy class và test case

@@ -1,0 +1,81 @@
+trung@ubuntu:~/project3/Chart$ sh coverageTests.sh
+cd /home/trung/project3/Chart
+cd /home/trung/project3/Chart/7/buggy_project
+git add .
+git stash
+Saved working directory and index state WIP on (no branch): 231f352 D4J_Chart_7_BUGGY_VERSION
+git stash clear
+defects4j compile
+Running ant (compile)...................................................... OK
+Running ant (compile.tests)................................................ OK
+defects4j test
+Running ant (compile.tests)................................................ OK
+Running ant (run.dev.tests)................................................ OK
+Failing tests: 1
+  - org.jfree.data.time.junit.TimePeriodValuesTests::testGetMaxMiddleIndex
+defects4j export -p tests.relevant -o tests_relevant.txt
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.tests.relevant)........................................ OK
+
+mv tests_relevant.txt tests_list
+defects4j coverage -t org.jfree.data.time.junit.TimePeriodValuesCollectionTests::org.jfree.data.time.junit.TimePeriodValuesCollectionTests
+Running ant (compile.tests)................................................ OK
+Running ant (coverage.instrument).......................................... OK
+Running ant (run.dev.tests)................................................ FAIL
+Executed command:  cd /home/trung/project3/Chart/7/buggy_project && /home/trung/defects4j/major/bin/ant -f /home/trung/defects4j/framework/projects/defects4j.build.xml -Dd4j.home=/home/trung/defects4j -Dd4j.dir.projects=/home/trung/defects4j/framework/projects -Dbasedir=/home/trung/project3/Chart/7/buggy_project -Dbuild.compiler=javac1.7 -DOUTFILE=/home/trung/project3/Chart/7/buggy_project/failing_tests -Dtest.entry.class=org.jfree.data.time.junit.TimePeriodValuesCollectionTests -Dtest.entry.method=org.jfree.data.time.junit.TimePeriodValuesCollectionTests run.dev.tests 2>&1
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Buildfile: /home/trung/defects4j/framework/projects/defects4j.build.xml
+
+initialise:
+
+compile:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:57: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+compile-experimental:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:106: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+compile.tests:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:123: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+update.all.tests:
+
+run.dev.tests:
+
+BUILD FAILED
+/home/trung/defects4j/framework/projects/defects4j.build.xml:107: Invalid specification of test methods: "org.jfree.data.time.junit.TimePeriodValuesCollectionTests"; expected: comma-separated list of valid Java identifiers
+
+Total time: 1 second
+Couldn't obtain coverage results! at /home/trung/defects4j/framework/bin/d4j/d4j-coverage line 153.
+Compilation failed in require at /home/trung/defects4j/framework/bin/defects4j line 195.
+tail: cannot open 'summary.csv' for reading: No such file or directory
+defects4j coverage -t org.jfree.data.time.junit.TimePeriodValuesTests::org.jfree.data.time.junit.TimePeriodValuesTests
+Running ant (compile.tests)................................................ OK
+Running ant (coverage.instrument).......................................... OK
+Running ant (run.dev.tests)................................................ FAIL
+Executed command:  cd /home/trung/project3/Chart/7/buggy_project && /home/trung/defects4j/major/bin/ant -f /home/trung/defects4j/framework/projects/defects4j.build.xml -Dd4j.home=/home/trung/defects4j -Dd4j.dir.projects=/home/trung/defects4j/framework/projects -Dbasedir=/home/trung/project3/Chart/7/buggy_project -Dbuild.compiler=javac1.7 -DOUTFILE=/home/trung/project3/Chart/7/buggy_project/failing_tests -Dtest.entry.class=org.jfree.data.time.junit.TimePeriodValuesTests -Dtest.entry.method=org.jfree.data.time.junit.TimePeriodValuesTests run.dev.tests 2>&1
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Buildfile: /home/trung/defects4j/framework/projects/defects4j.build.xml
+
+initialise:
+
+compile:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:57: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+compile-experimental:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:106: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+compile.tests:
+    [javac] /home/trung/defects4j/framework/projects/Chart/Chart.build.xml:123: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+update.all.tests:
+
+run.dev.tests:
+
+BUILD FAILED
+/home/trung/defects4j/framework/projects/defects4j.build.xml:107: Invalid specification of test methods: "org.jfree.data.time.junit.TimePeriodValuesTests"; expected: comma-separated list of valid Java identifiers
+
+Total time: 1 second
+Couldn't obtain coverage results! at /home/trung/defects4j/framework/bin/d4j/d4j-coverage line 153.
+Compilation failed in require at /home/trung/defects4j/framework/bin/defects4j line 195.
+tail: cannot open 'summary.csv' for reading: No such file or directory
+cd /home/trung/project3/Chart
